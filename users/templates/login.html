@@ -1,0 +1,158 @@
+
+{% extends "main.html" %}
+
+
+{% block title %}
+    Login
+{%endblock%}
+
+{% block content%}
+<style>
+   body {
+       background-color: #f8f9fa;
+   }
+   .card {
+       border: none;
+       border-radius: 10px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+   .card-header {
+       background-color: #f00202;
+       color: white;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+   }
+   .btn-primary {
+       background-color: #007bff;
+       border: none;
+   }
+   .form-control {
+       border-radius: 5px;
+   }
+   .form-text {
+       color: #6c757d;
+   }
+</style>
+
+<div class="container mt-5">
+   <div class="row justify-content-center">
+       <div class="col-md-6">
+           <div class="card">
+               <div class="card-header text-center">
+                   <h4 class="mb-0">Login</h4>
+               </div>
+               <div class="card-body">
+                   <form action="/users/login/" method="post">
+                       {% csrf_token %}
+                       {% for field in form %}
+                           <div class="form-group mb-3">
+                               {{ field.label_tag }}
+                               {{ field }}
+                               {% if field.help_text %}
+                                   <small class="form-text">{{ field.help_text }}</small>
+                               {% endif %}
+                               {% if field.errors %}
+                                   <div class="text-danger">
+                                       {{ field.errors }}
+                                   </div>
+                               {% endif %}
+                           </div>
+                       {% endfor %}
+                       {% if request.GET.next %}
+                           <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+                       {% endif %}
+                       <button type="submit" class="btn btn-danger btn-block">Submit</button>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #ce3535">
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">About us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">Home</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">About</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">players</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="#!" class="text-white">New-post</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
+  
+        <hr class="my-5" />
+  
+        <!-- Section: Text -->
+        <section class="mb-5">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                distinctio earum repellat quaerat voluptatibus placeat nam,
+                commodi optio pariatur est quia magnam eum harum corrupti
+                dicta, aliquam sequi voluptate quas.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Text -->
+  
+        
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2024 Copyright:
+        <a class="text-white" href="#"
+           >Manunited</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+ 
+{% endblock %}

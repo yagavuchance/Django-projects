@@ -1,0 +1,192 @@
+{% extends "main.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+<style>
+    .team-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    .spin-image {
+        width: 200px; 
+        height: 150px; 
+        animation: spin 5s linear infinite;
+        background-color: transparent;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<!-- Hero Section -->
+<div class="jumbotron jumbotron-fluid bg-danger text-white text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bolder">About Manunited Club</h1>
+        
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Who We Are</h2>
+            <p>Manunited Club is dedicated to bringing fans the latest news, updates, and information about Manchester United Football Club. Our community is passionate about supporting the team and connecting fans worldwide.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="/media/images/logo.png" class="img-fluid spin-image" alt="About Us">
+        </div>
+    </div>
+</div>
+
+<!-- Our Values Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card border-danger shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Passion</h5>
+                    <p class="card-text">We live and breathe Manchester United, and our passion is reflected in everything we do.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-danger shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Community</h5>
+                    <p class="card-text">We foster a sense of community among fans, providing a space for discussion and connection.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card  border-danger   shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Integrity</h5>
+                    <p class="card-text">We are committed to providing accurate and honest information to our community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Team Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Meet Our Team</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="/media/images/stevo.jpg" class="team-img rounded-circle img-fluid mb-3" alt="Team Member 1">
+            <h5>Chance Stevo</h5>
+            <p class="text-muted">Founder & CEO</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="/media/images/evart.jpg" class="team-img rounded-circle img-fluid mb-3" alt="Team Member 2">
+            <h5>Evart Evash</h5>
+            <p class="text-muted">Chief Editor</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="/media/images/karen.jpg" class="team-img rounded-circle img-fluid mb-3" alt="Team Member 3">
+            <h5>Kirabo Karen</h5>
+            <p class="text-muted">Community Manager</p>
+        </div>
+    </div>
+</div>
+<!-- Back to Home -->
+<div class="container text-center my-5">
+    <p>Back to <a href="/" class="text-decoration-none fw-bold">Home</a></p>
+</div>
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #ce3535">
+        <!-- Grid container -->
+        <div class="container">
+          <!-- Section: Links -->
+          <section class="mt-5">
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-5">
+              <!-- Grid column -->
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white">About us</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white">Home</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white">About</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white">players</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2">
+                <h6 class="text-uppercase font-weight-bold">
+                  <a href="#!" class="text-white">New-post</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row-->
+          </section>
+          <!-- Section: Links -->
+    
+          <hr class="my-5" />
+    
+          <!-- Section: Text -->
+          <section class="mb-5">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                  distinctio earum repellat quaerat voluptatibus placeat nam,
+                  commodi optio pariatur est quia magnam eum harum corrupti
+                  dicta, aliquam sequi voluptate quas.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Section: Text -->
+    
+          
+    
+        <!-- Copyright -->
+        <div
+             class="text-center p-3"
+             style="background-color: rgba(0, 0, 0, 0.2)"
+             >
+          © 2024 Copyright:
+          <a class="text-white" href="#"
+             >Manunited</a
+            >
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+   
+
+{% endblock %}

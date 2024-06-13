@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap_icons %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Manunited
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <style>
+    .liststyle-none {
+        list-style: none;
+    }
+</style>
+  
+
+</head>
+
+<body>
+ 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/media/images/logo.png" width="30" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about/">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'manunited:players' %}">players</a>
+              </li>
+             
+              {% if user.is_authenticated %}
+                 <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="{% url 'manunited:new-post' %}">New Post</a>
+                 </li>
+                
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'users:register' %}">register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">login</a>
+              </li>
+
+              {% endif %}
+             
+              
+              
+            </ul>
+            {% if user.is_authenticated %}
+            
+            <li class="nav-item liststyle-none">
+              <span class="navbar-text"><h5 class="fw-bold">Welcome, {{ user.username }}!</h5></span>
+          </li>
+          
+           
+           <form action="{% url 'users:logout'%}" method="post" class="ms-3">
+           {% csrf_token %}
+               <button class="btn btn-danger">logout</button>
+           </form>
+         {% else %}
+        
+
+         {% endif %}
+          </div>
+        </div>
+      </nav>
+    {% block content %}
+    
+
+    {% endblock %}
+</body>
+</html>
