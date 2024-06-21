@@ -52,6 +52,33 @@
               <div class="card-footer text-muted">
                   <p class="card-text"><small class="text-white">Last updated 3 mins ago</small></p>
                   <h6 class="author"> Author  {{ details.author }}</h6>
+                  <a class="btn btn-warning me-1" href="{% url 'manunited:edit-post' details.id %}">
+                    edit
+                  </a>
+                  <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#delete{{ details.id }}">
+                    delete
+                  </button>
+                  <!-- Modal View for Delete -->
+                  <div class="modal" id="delete{{ details.id }}" tabindex="-1" aria-labelledby="mymodalLabel2" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Student: {{ details.Name }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="{% url 'manunited:delete' details.id %}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-dark" value="Delete">
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
           </div>
       </div>

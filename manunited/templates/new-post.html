@@ -12,26 +12,7 @@
 <!-- new_post.html -->
 <form class="form-group " style="margin:25px;" action="{% url 'manunited:new-post' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="mb-3">
-        {{ form.Name.label_tag }}
-        {{ form.Name }}
-    </div>
-    <div class="mb-3">
-        {{ form.Number.label_tag }}
-        {{ form.Number }}
-    </div>
-    <div class="mb-3">
-        {{ form.Age.label_tag }}
-        {{ form.Age }}
-    </div>
-    <div class="mb-3">
-        {{ form.country.label_tag }}
-        {{ form.country }}
-    </div>
-    <div class="mb-3">
-        {{ form.image.label_tag }}
-        {{ form.image }}
-    </div>
+   {{form.as_p}}
     <button class="btn btn-danger" type="submit">Submit</button>
 </form>
 
